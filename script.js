@@ -43,11 +43,11 @@ highlightListItems();
 // Define the functions (e.g., toggleStatus, createTimestamp) and event listeners
 // here to handle the click event on the toggleButton [6, 7].
 function toggleStatus(e){
-    e.preventDefault() // task 6
+    e.preventDefault(); // task 6
     statusOutput.classList.toggle("hidden");
 
     if(!statusOutput.classList.contains("hidden")){
-        mainTitle.style.backgroundColor = "yellow" //visible
+        mainTitle.style.backgroundColor = "yellow"; //visible
         createTimestamp(); //call helper function
     }else{
         mainTitle.style.backgroundColor = ""; //not visible
@@ -55,7 +55,7 @@ function toggleStatus(e){
 }
 function createTimestamp(){
     const span = document.createElement("span");
-    span.innerHTML = new Date().toLocaleTimeString();
+    span.innerHTML = new Date().toLocaleTimeString() + "<br>";
     statusOutput.appendChild(span);
 }
 toggleButton.addEventListener("click", toggleStatus);
